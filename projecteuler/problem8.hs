@@ -10,7 +10,7 @@ consecutiveSubsets n xs
   | (length (take n xs) == n) = [(take n xs)] ++ (consecutiveSubsets n (tail xs))
   | otherwise = []
 
--- computes a product from a String of individual numbers
+-- computes the product of single digit numbers in a String
 product' :: (Read a, Num a) => String -> a
 product' (xs) = foldr (\c total -> (read c) * total) 1 (consecutiveSubsets 1 xs)
 
