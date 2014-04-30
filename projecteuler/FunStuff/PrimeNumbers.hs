@@ -1,13 +1,13 @@
 module FunStuff.PrimeNumbers
  (primeNumbers , primeFactorization, largestPrimeFactor) where
--- for correct answer run: Prelude> largestPrimeFactor 600851475143
+
+-- module for prime number related problems
+
+--TODO implement Sieve of Atkins
+
 largestPrimeFactor :: Integer -> Integer
 largestPrimeFactor n = head $ primeFactorization n
   
-  --failed attempt... generate factors before checking all prime numbers...
-{-  let sqrtN = round . sqrt $ fromIntegral n
-  in foldr max 0 . takeWhile (<= sqrtN) . filter (\p -> n `mod` p == 0) $ primeNumbers
--}
 primeFactorization :: Integer -> [Integer]
 primeFactorization 1 = []
 primeFactorization n =
