@@ -79,6 +79,9 @@ capital :: String -> String
 capital "" = "Empty string omg"
 capital all@(s:st) = "The first letter of " ++ all ++ " is " ++ [s]
 
+jon :: String
+jon = "Jon Chong"
+
 --Guards! (Patterns are for form, Guards find the truth!)
 {-| Multi line comment
 bmiTell :: (RealFloat a)  => a -> String

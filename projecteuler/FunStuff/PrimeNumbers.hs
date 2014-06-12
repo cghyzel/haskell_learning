@@ -2,7 +2,7 @@ module FunStuff.PrimeNumbers
  (primeNumbers , primeFactorization, largestPrimeFactor) where
 
 -- module for prime number related problems
-
+-- helpful link: http://www.justinshield.com/2011/05/haskell-a-better-prime-number-list-using-sieve-of-eratosthenes-and-lazy-pattern-matching/
 --TODO implement Sieve of Atkins
 
 largestPrimeFactor :: Integer -> Integer
@@ -16,11 +16,13 @@ primeFactorization n =
   in  primeFactorization (n `div` (head factor)) ++ factor
       --find the factors of what remains
   
--- prime numbers with sieve of euler
+
 primeNumbers :: [Integer]
 primeNumbers = eulerSieve [2..]
 
+
 -- gotta love the Swiss (and Haskells laziness...)
+-- NAIVE
 eulerSieve :: [Integer] -> [Integer]
 eulerSieve (prime:xs) =
   let nonPrimes = map (*prime) (prime:xs)

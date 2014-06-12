@@ -8,7 +8,7 @@ threeDigitProductPalindromes = map read . filter (isPalindrome) $ threeDigitProd
 
 --easy as pie
 isPalindrome :: String -> Bool
-isPalindrome s = s == reverse s
+isPalindrome s = s == reverse sp
 
 --show converts to string
 threeDigitProducts :: [String]
